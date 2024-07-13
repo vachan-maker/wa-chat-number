@@ -1,0 +1,31 @@
+{
+    "short_name": "Chat",
+    "name": "Chat: Message unknown numbers on WhatsApp",
+    "icons": [
+      {
+        "src": "images/icons/192x192.png",
+        "type": "image/png",
+        "sizes": "512x512"
+      },
+      {
+        "src": "images/icons/512x512.png",
+        "type": "image/png",
+        "sizes": "512x512"
+      }
+    ],
+    "id": "/?source=pwa",
+    "start_url": "/?source=pwa",
+    "background_color": "#1e1e1e",
+    "display": "standalone",
+    "scope": "/",
+    "theme_color": "#075E54",
+    "description": "Message numbers on WhatsApp without saving numbers to your contacts",
+    "screenshots": [
+      {
+        "src": "images/screenshots/wide.webp",
+        "type": "image/webp",
+        "sizes": "1354x663",
+        "form_factor": "wide"
+      }
+    ]
+  }
