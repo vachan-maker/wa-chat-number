@@ -44,25 +44,13 @@
 			flex-direction: column;
 			gap: 10px;
 		}
-		fieldset {
-			display: flex;
-			gap: 10px;
-			flex-direction: row;
-			border: none;
-			padding: 0;
-			margin: 0;
-			align-items: flex-end;
-			flex-flow: flex-start;
-		}
 		#countryCode {
 			font: inherit;
 			padding: 10px;
-			flex-basis: 30%;
 			height: 100%;
 		}
 		#phoneNumber {
 			font: inherit;
-			flex: 1;
 			padding: 10px;
 			border:none;
 			background-color: #2b2b2b;
@@ -76,12 +64,15 @@
 			border-bottom: #17a8be 2px solid;
 		}
 		button {
-			padding: 10px;
+			padding: 14px;
 			background-color: #075E54;
 			border: none;
 			border-radius: 5px;
 			font-weight: bold;
 		}
+		label {
+		font-weight: bold;
+	}
 	</style>
   </head>
   <body>
@@ -95,8 +86,8 @@
 			<p>Enter a number to contact via WhatsApp</p>
 		</div>	
       <form>
-		<fieldset>
           <!-- country codes (ISO 3166) and Dial codes. -->
+		  <label for="countryCode">Select Country Code</label>
 <select name="countryCode" id="countryCode">
 	<option data-countryCode="GB" value="44">UK (+44)</option>
 	<option data-countryCode="US" value="1">USA (+1)</option>
@@ -318,8 +309,8 @@
 		<option data-countryCode="ZW" value="263">Zimbabwe (+263)</option>
 	</optgroup>
 </select>
+<label for="phone">Enter Phone Number</label>
 <input type="tel" id="phoneNumber" name="phone" required/>
-</fieldset>
 <button onclick="messageNumberMobile()" type="reset">Start Chatting!</button>
 <button onclick="messageNumberDesktop()" type="reset">Start Chatting! (Desktop)</button>
       </form>
@@ -330,7 +321,7 @@
         var countryCode = document.getElementById("countryCode").value;
         console.log(phoneNumber)
         console.log(countryCode)
-        whatsappMsgMobile = 'whatsapp://' + countryCode + phoneNumber;
+        whatsappMsgMobile = 'whatsapp://send?phone=' + countryCode + phoneNumber;
         window.location.href = whatsappMsgMobile;
 		console.log(whatsappMsgMobile)
         }
